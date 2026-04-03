@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub - 在线课程学习平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>LearnHub</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#courses">课程</a>
+                <a href="#categories">分类</a>
+                <a href="#resources">资源</a>
+                <a href="#about">关于我们</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>解锁你的学习潜力</h2>
+                <p>探索数千门优质课程，提升你的技能，实现职业目标</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">开始学习</button>
+                    <button class="btn btn-outline">浏览课程</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=online%20learning%20platform%20students%20studying%20laptop%20modern%20education&image_size=landscape_16_9" alt="在线学习">
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程分类 -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">课程分类</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-code"></i>
+                    <h3>编程开发</h3>
+                    <p>学习各种编程语言和开发技术</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-business-time"></i>
+                    <h3>商业管理</h3>
+                    <p>提升商业技能和管理能力</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-design"></i>
+                    <h3>设计创意</h3>
+                    <p>学习设计工具和创意技巧</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-language"></i>
+                    <h3>语言学习</h3>
+                    <p>掌握新语言，拓展国际视野</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-science"></i>
+                    <h3>科学技术</h3>
+                    <p>探索科学前沿和技术创新</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>个人发展</h3>
+                    <p>提升自我认知和生活技能</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色课程 -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">特色课程</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=web%20development%20course%20coding%20programming&image_size=square" alt="Web开发">
+                    </div>
+                    <div class="course-info">
+                        <div class="course-category">编程开发</div>
+                        <h3>Web全栈开发实战</h3>
+                        <p>从前端到后端，掌握完整的Web开发技能</p>
+                        <div class="course-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                            <span class="students">1,234人学习</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="current-price">¥299</span>
+                            <span class="original-price">¥599</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=data%20science%20machine%20learning%20analysis&image_size=square" alt="数据分析">
+                    </div>
+                    <div class="course-info">
+                        <div class="course-category">科学技术</div>
+                        <h3>数据分析与机器学习</h3>
+                        <p>掌握数据处理和机器学习算法</p>
+                        <div class="course-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                            <span class="students">987人学习</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="current-price">¥399</span>
+                            <span class="original-price">¥799</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ui%20ux%20design%20interface%20creation&image_size=square" alt="UI/UX设计">
+                    </div>
+                    <div class="course-info">
+                        <div class="course-category">设计创意</div>
+                        <h3>UI/UX设计实战</h3>
+                        <p>学习用户界面和用户体验设计</p>
+                        <div class="course-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                            <span class="students">756人学习</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="current-price">¥249</span>
+                            <span class="original-price">¥499</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=business%20management%20leadership%20strategy&image_size=square" alt="商业管理">
+                    </div>
+                    <div class="course-info">
+                        <div class="course-category">商业管理</div>
+                        <h3>创业与商业战略</h3>
+                        <p>学习创业知识和商业运营策略</p>
+                        <div class="course-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                            <span class="students">623人学习</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="current-price">¥199</span>
+                            <span class="original-price">¥399</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <button class="btn btn-outline">查看全部课程</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习资源 -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2 class="section-title">学习资源</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>电子书</h3>
+                    <p>免费下载各类学习电子书</p>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>视频教程</h3>
+                    <p>观看高质量的教学视频</p>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>练习资料</h3>
+                    <p>获取配套练习和作业</p>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-community"></i>
+                    </div>
+                    <h3>学习社区</h3>
+                    <p>加入学习社区交流讨论</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">用户评价</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>LearnHub的课程质量非常高，老师讲解清晰，内容实用。通过学习，我成功转行成为了一名前端开发工程师。</p>
+                    <div class="testimonial-author">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20male%20portrait%20headshot&image_size=square" alt="用户头像">
+                        <div class="author-info">
+                            <h4>李明</h4>
+                            <p>前端开发工程师</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>课程内容非常丰富，从基础到进阶都有覆盖。平台的学习体验也很好，遇到问题时老师和同学都会及时帮助。</p>
+                    <div class="testimonial-author">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20female%20portrait%20headshot&image_size=square" alt="用户头像">
+                        <div class="author-info">
+                            <h4>王芳</h4>
+                            <p>数据分析师</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>作为一名在校学生，LearnHub的课程帮助我提前掌握了很多实用技能，为未来的就业做好了准备。</p>
+                    <div class="testimonial-author">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=young%20asian%20student%20portrait%20headshot&image_size=square" alt="用户头像">
+                        <div class="author-info">
+                            <h4>张伟</h4>
+                            <p>计算机专业学生</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 注册区域 -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <h2>准备好开始你的学习之旅了吗？</h2>
+                <p>注册即可获得7天免费试用，解锁所有课程内容</p>
+                <div class="signup-form">
+                    <input type="email" placeholder="输入你的邮箱">
+                    <button class="btn btn-primary">立即注册</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>LearnHub</h3>
+                    <p>致力于提供高质量的在线教育，帮助每个人实现自己的学习目标。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>课程分类</h4>
+                    <ul>
+                        <li><a href="#">编程开发</a></li>
+                        <li><a href="#">商业管理</a></li>
+                        <li><a href="#">设计创意</a></li>
+                        <li><a href="#">语言学习</a></li>
+                        <li><a href="#">科学技术</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">师资团队</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">学习指南</a></li>
+                        <li><a href="#">退款政策</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LearnHub. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
