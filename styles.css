@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f5f5f5;
+    background-color: #f9f7f9;
 }
 
 .container {
@@ -30,30 +30,30 @@ body {
 }
 
 .btn-primary {
-    background-color: #4CAF50;
+    background-color: #e98074;
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #45a049;
+    background-color: #d86f61;
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background-color: transparent;
-    color: #4CAF50;
-    border: 2px solid #4CAF50;
+    color: #e98074;
+    border: 2px solid #e98074;
 }
 
 .btn-outline:hover {
-    background-color: #4CAF50;
+    background-color: #e98074;
     color: white;
 }
 
 /* 导航栏 */
 .navbar {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: fixed;
     top: 0;
     left: 0;
@@ -70,7 +70,7 @@ body {
 
 .logo h1 {
     font-size: 24px;
-    color: #4CAF50;
+    color: #e98074;
     font-weight: 700;
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #4CAF50;
+    color: #e98074;
 }
 
 .auth-buttons {
@@ -103,7 +103,7 @@ body {
 
 /* 英雄区 */
 .hero {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #f8f4f8 0%, #e8dfe8 100%);
     padding: 120px 0 80px;
     margin-top: 70px;
 }
@@ -855,7 +855,7 @@ body {
 
 /* 高亮文本 */
 .highlight {
-    color: #4CAF50;
+    color: #e98074;
 }
 
 /* 关于我 */
@@ -922,7 +922,7 @@ body {
 .skill-icon {
     width: 60px;
     height: 60px;
-    background-color: #4CAF50;
+    background-color: #e98074;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -949,7 +949,7 @@ body {
 
 .skill-progress {
     height: 100%;
-    background-color: #4CAF50;
+    background-color: #e98074;
     border-radius: 4px;
     transition: width 1s ease;
 }
@@ -991,7 +991,7 @@ body {
 
 .project-date {
     font-size: 14px;
-    color: #4CAF50;
+    color: #e98074;
     margin-bottom: 10px;
 }
 
@@ -1001,8 +1001,8 @@ body {
 
 .skill-tag {
     display: inline-block;
-    background-color: #e8f5e8;
-    color: #4CAF50;
+    background-color: #f8e8e8;
+    color: #e98074;
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 12px;
@@ -1029,7 +1029,7 @@ body {
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: #4CAF50;
+    background-color: #e98074;
     transform: translateX(-50%);
 }
 
@@ -1052,7 +1052,7 @@ body {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: #4CAF50;
+    background-color: #e98074;
     border-radius: 50%;
     top: 20px;
     z-index: 1;
@@ -1068,7 +1068,7 @@ body {
 
 .education-date {
     font-weight: 600;
-    color: #4CAF50;
+    color: #e98074;
     margin-bottom: 10px;
 }
 
@@ -1110,7 +1110,7 @@ body {
 }
 
 .contact-info i {
-    color: #4CAF50;
+    color: #e98074;
     width: 20px;
 }
 
@@ -1167,7 +1167,7 @@ body {
 .learning-resources .resource-icon {
     width: 80px;
     height: 80px;
-    background-color: #4CAF50;
+    background-color: #e98074;
     color: white;
     border-radius: 50%;
     display: flex;
