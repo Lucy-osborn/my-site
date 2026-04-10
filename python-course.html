@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python基础课程 - LearnHub</title>
+    <title>Python基础课程 - 独立学习站点</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,18 +12,18 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">
-                <h1>LearnHub</h1>
+                <h1>Python学习中心</h1>
             </div>
             <nav class="nav-links">
-                <a href="index.html">首页</a>
-                <a href="index.html#courses">课程</a>
-                <a href="index.html#categories">分类</a>
-                <a href="index.html#resources">资源</a>
-                <a href="index.html#about">关于我们</a>
+                <a href="python-course.html">首页</a>
+                <a href="#outline">课程大纲</a>
+                <a href="#instructor">讲师介绍</a>
+                <a href="#reviews">学员评价</a>
+                <a href="#resources">学习资源</a>
             </nav>
             <div class="auth-buttons">
                 <button class="btn btn-outline">登录</button>
-                <button class="btn btn-primary">注册</button>
+                <button class="btn btn-primary">开始学习</button>
             </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -59,7 +59,7 @@
             </div>
 
             <!-- 课程大纲 -->
-            <div class="course-outline">
+            <div id="outline" class="course-outline">
                 <h3>课程大纲</h3>
                 <div class="module-list">
                     <div class="module">
@@ -178,7 +178,7 @@
             </div>
 
             <!-- 讲师信息 -->
-            <div class="instructor">
+            <div id="instructor" class="instructor">
                 <h3>讲师介绍</h3>
                 <div class="instructor-card">
                     <div class="instructor-avatar">
@@ -199,7 +199,7 @@
             </div>
 
             <!-- 课程评价 -->
-            <div class="course-reviews">
+            <div id="reviews" class="course-reviews">
                 <h3>学员评价</h3>
                 <div class="reviews-grid">
                     <div class="review-card">
@@ -255,6 +255,45 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 学习资源 -->
+            <div id="resources" class="learning-resources">
+                <h3>学习资源</h3>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>课程讲义</h4>
+                        <p>下载完整的课程讲义，包含所有知识点和示例代码</p>
+                        <a href="#" class="btn btn-outline">下载</a>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>代码示例</h4>
+                        <p>获取课程中所有的代码示例，便于练习和参考</p>
+                        <a href="#" class="btn btn-outline">查看</a>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h4>视频教程</h4>
+                        <p>观看课程的视频讲解，加深对知识点的理解</p>
+                        <a href="#" class="btn btn-outline">观看</a>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h4>练习题库</h4>
+                        <p>完成课后练习，巩固所学知识</p>
+                        <a href="#" class="btn btn-outline">练习</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -277,8 +316,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h3>LearnHub</h3>
-                    <p>致力于提供高质量的在线教育，帮助每个人实现自己的学习目标。</p>
+                    <h3>Python学习中心</h3>
+                    <p>专注于Python编程语言的教学，帮助学习者掌握编程基础和实战技能。</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-weixin"></i></a>
                         <a href="#"><i class="fab fa-weibo"></i></a>
@@ -287,38 +326,38 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h4>课程分类</h4>
+                    <h4>课程导航</h4>
                     <ul>
-                        <li><a href="#">编程开发</a></li>
-                        <li><a href="#">商业管理</a></li>
-                        <li><a href="#">设计创意</a></li>
-                        <li><a href="#">语言学习</a></li>
-                        <li><a href="#">科学技术</a></li>
+                        <li><a href="python-course.html">首页</a></li>
+                        <li><a href="#outline">课程大纲</a></li>
+                        <li><a href="#instructor">讲师介绍</a></li>
+                        <li><a href="#reviews">学员评价</a></li>
+                        <li><a href="#resources">学习资源</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>关于我们</h4>
+                    <h4>学习资源</h4>
                     <ul>
-                        <li><a href="#">公司简介</a></li>
-                        <li><a href="#">师资团队</a></li>
-                        <li><a href="#">合作伙伴</a></li>
-                        <li><a href="#">加入我们</a></li>
-                        <li><a href="#">联系我们</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>帮助中心</h4>
-                    <ul>
+                        <li><a href="#">课程讲义</a></li>
+                        <li><a href="#">代码示例</a></li>
+                        <li><a href="#">视频教程</a></li>
+                        <li><a href="#">练习题库</a></li>
                         <li><a href="#">常见问题</a></li>
-                        <li><a href="#">学习指南</a></li>
-                        <li><a href="#">退款政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系方式</a></li>
                         <li><a href="#">隐私政策</a></li>
                         <li><a href="#">用户协议</a></li>
+                        <li><a href="#">帮助中心</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 LearnHub. 保留所有权利。</p>
+                <p>&copy; 2026 Python学习中心. 保留所有权利。</p>
             </div>
         </div>
     </footer>
