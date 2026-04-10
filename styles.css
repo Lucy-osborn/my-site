@@ -578,6 +578,273 @@ body {
     }
 }
 
+/* 课程详情页面 */
+.course-detail {
+    padding: 120px 0 80px;
+    background-color: white;
+}
+
+.course-header {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.course-banner {
+    flex: 1;
+}
+
+.course-banner img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.course-info-header {
+    flex: 1;
+}
+
+.course-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.course-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.duration {
+    color: #666;
+}
+
+.course-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* 课程大纲 */
+.course-outline {
+    margin-bottom: 60px;
+}
+
+.course-outline h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.module-list {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.module {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.module:last-child {
+    border-bottom: none;
+}
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.module-header:hover {
+    background-color: #f0f0f0;
+}
+
+.module-header h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.module-duration {
+    font-size: 14px;
+    color: #666;
+}
+
+.module-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.module-content.active {
+    padding: 20px;
+    max-height: 200px;
+}
+
+.module-content ul {
+    list-style: none;
+}
+
+.module-content li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #666;
+}
+
+.module-content li:last-child {
+    border-bottom: none;
+}
+
+/* 讲师信息 */
+.instructor {
+    margin-bottom: 60px;
+}
+
+.instructor h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.instructor-card {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.instructor-avatar {
+    flex-shrink: 0;
+}
+
+.instructor-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.instructor-info {
+    flex: 1;
+}
+
+.instructor-title {
+    font-size: 14px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.instructor-bio {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.instructor-courses {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.instructor-courses a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: #e8f5e8;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.instructor-courses a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* 课程评价 */
+.course-reviews h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.review-rating {
+    color: #ff9800;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.review-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.review-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-author h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.review-author p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .course-header {
+        flex-direction: column;
+    }
+
+    .instructor-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .course-buttons {
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-content h2 {
         font-size: 28px;
@@ -611,5 +878,9 @@ body {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
     }
 }
