@@ -9,7 +9,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f7f9;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
+    overflow-y: auto;
+}
+
+html {
+    overflow-y: auto;
+    height: 100%;
 }
 
 .container {
@@ -30,23 +36,23 @@ body {
 }
 
 .btn-primary {
-    background-color: #e98074;
+    background-color: #e6005c;
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #d86f61;
+    background-color: #c70050;
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background-color: transparent;
-    color: #e98074;
-    border: 2px solid #e98074;
+    color: #e6005c;
+    border: 2px solid #e6005c;
 }
 
 .btn-outline:hover {
-    background-color: #e98074;
+    background-color: #e6005c;
     color: white;
 }
 
@@ -70,7 +76,7 @@ body {
 
 .logo h1 {
     font-size: 24px;
-    color: #e98074;
+    color: #e6005c;
     font-weight: 700;
 }
 
@@ -87,7 +93,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #e98074;
+    color: #e6005c;
 }
 
 .auth-buttons {
@@ -103,7 +109,8 @@ body {
 
 /* 英雄区 */
 .hero {
-    background: linear-gradient(135deg, #f8f4f8 0%, #e8dfe8 100%);
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
+    background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="%23e6005c" fill-opacity="0.2" fill-rule="evenodd"/%3E%3C/svg%3E');
     padding: 120px 0 80px;
     margin-top: 70px;
 }
@@ -150,9 +157,9 @@ body {
 .section-title {
     font-size: 36px;
     font-weight: 700;
-    text-align: center;
+    text-align: left;
     margin-bottom: 60px;
-    color: #333;
+    color: #e6005c;
 }
 
 /* 课程分类 */
@@ -240,8 +247,8 @@ body {
 }
 
 .course-category {
-    background-color: #e8f5e8;
-    color: #4CAF50;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
+    color: #e6005c;
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 14px;
@@ -453,8 +460,8 @@ body {
 
 /* 页脚 */
 .footer {
-    background-color: #333;
-    color: white;
+    background: linear-gradient(135deg, #ffebf2 0%, #ffc1d9 100%);
+    color: #333;
     padding: 60px 0 30px;
 }
 
@@ -469,7 +476,7 @@ body {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #4CAF50;
+    color: #ff99b4;
 }
 
 .footer-column h4 {
@@ -492,7 +499,7 @@ body {
 }
 
 .footer-column ul li a {
-    color: white;
+    color: #333;
     text-decoration: none;
     opacity: 0.8;
     transition: opacity 0.3s ease;
@@ -500,7 +507,7 @@ body {
 
 .footer-column ul li a:hover {
     opacity: 1;
-    color: #4CAF50;
+    color: #ff99b4;
 }
 
 .social-links {
@@ -514,19 +521,20 @@ body {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
-    color: white;
+    color: #ff99b4;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    background-color: #4CAF50;
+    background-color: #ff99b4;
+    color: white;
     transform: translateY(-3px);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 153, 180, 0.3);
     padding-top: 30px;
     text-align: center;
     opacity: 0.8;
@@ -587,7 +595,7 @@ body {
 /* 课程详情页面 */
 .course-detail {
     padding: 120px 0 80px;
-    background-color: white;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
 }
 
 .course-header {
@@ -647,9 +655,10 @@ body {
 }
 
 .module-list {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #ffb3d1;
     border-radius: 8px;
     overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .module {
@@ -665,13 +674,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .module-header:hover {
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #ffd6e8 0%, #ff99c2 100%);
 }
 
 .module-header h4 {
@@ -690,11 +699,13 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
+    background-color: white;
 }
 
 .module-content.active {
     padding: 20px;
-    max-height: 200px;
+    max-height: none;
+    overflow: visible;
 }
 
 .module-content ul {
@@ -855,13 +866,119 @@ body {
 
 /* 高亮文本 */
 .highlight {
-    color: #e98074;
+    color: #e6005c;
 }
 
 /* 关于我 */
 .about {
     padding: 80px 0;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
+}
+
+/* 兴趣爱好 */
+.hobbies {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.hobby-card {
     background-color: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.hobby-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hobby-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #e6005c;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.hobby-icon i {
+    font-size: 32px;
+}
+
+/* 旅行足迹 */
+.travel {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
+}
+
+.travel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.travel-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.travel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.travel-info {
+    padding: 0;
+}
+
+.travel-date {
+    font-size: 14px;
+    color: #e6005c;
+    margin-bottom: 10px;
+}
+
+/* 美食日记 */
+.food {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.food-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.food-info {
+    padding: 0;
 }
 
 .about-content {
@@ -1082,7 +1199,7 @@ body {
 /* 联系方式 */
 .contact {
     padding: 80px 0;
-    background-color: white;
+    background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
 }
 
 .contact-content {
@@ -1110,7 +1227,7 @@ body {
 }
 
 .contact-info i {
-    color: #e98074;
+    color: #e6005c;
     width: 20px;
 }
 

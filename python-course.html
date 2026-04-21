@@ -1,12 +1,108 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python基础课程 - 独立学习站点</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Python基础课程 - 独立学习站点</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- CodeMirror 样式 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css">
+        <!-- CodeMirror 脚本 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
+        <!-- Pyodide 用于在浏览器中运行 Python -->
+        <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+        <style>
+            /* 代码运行器样式 */
+            .code-runner {
+                margin: 20px 0;
+                border: 1px solid #ffb3d1;
+                border-radius: 8px;
+                background-color: #fff;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }
+            
+            .code-runner-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 15px;
+                background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%);
+                cursor: pointer;
+            }
+            
+            .code-runner-title {
+                font-weight: bold;
+                color: #e6005c;
+            }
+            
+            .code-runner-actions {
+                display: flex;
+                gap: 10px;
+            }
+            
+            .code-runner-content {
+                padding: 15px;
+            }
+            
+            .code-editor {
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .CodeMirror {
+                height: 200px;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+            }
+            
+            .run-button {
+                background-color: #e6005c;
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            
+            .run-button:hover {
+                background-color: #c70050;
+            }
+            
+            .output {
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                background-color: #f9f9f9;
+                min-height: 100px;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                white-space: pre-wrap;
+            }
+            
+            /* 悬浮效果 */
+            .code-runner.floating {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 500px;
+                max-height: 600px;
+                z-index: 1000;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            }
+            
+            /* 折叠效果 */
+            .code-runner.collapsed .code-runner-content {
+                display: none;
+            }
+        </style>
+    </head>
 <body>
     <!-- 导航栏 -->
     <header class="navbar">
@@ -15,13 +111,13 @@
                 <h1>Python学习中心</h1>
             </div>
             <nav class="nav-links">
-                <a href="python-course.html">首页</a>
+                <a href="personal.html">个人主页</a>
+                <a href="python-course.html">Python课程</a>
                 <a href="#outline">课程大纲</a>
+                <a href="#about">关于课程</a>
+                <a href="#resources">学习资源</a>
             </nav>
-            <div class="auth-buttons">
-                <button class="btn btn-outline">登录</button>
-                <button class="btn btn-primary">开始学习</button>
-            </div>
+
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -32,8 +128,10 @@
     <section class="course-detail">
         <div class="container">
             <div class="course-header">
-                <div class="course-banner">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=python%20programming%20course%20code%20laptop%20modern%20education&image_size=landscape_16_9" alt="Python基础课程">
+                <div class="course-banner" style="display: flex; align-items: center; justify-content: center; width: 200px; height: 200px;">
+                    <div style="width: 180px; height: 180px; border-radius: 50%; background: linear-gradient(135deg, #ffe6f0 0%, #ffb3d1 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <span style="font-size: 48px; font-weight: bold; color: #e6005c; font-family: 'Arial', sans-serif;">Python</span>
+                    </div>
                 </div>
                 <div class="course-info-header">
                     <div class="course-category">编程开发</div>
@@ -51,113 +149,226 @@
                 <div class="module-list">
                     <div class="module">
                         <div class="module-header">
-                            <h4>第1周：Python入门</h4>
+                            <h4>第1周：Python入门与环境搭建</h4>
                             <span class="module-duration">2小时</span>
                         </div>
                         <div class="module-content">
+                            <h5>1.1 Python的历史与应用领域</h5>
+                            <p>Python是由Guido van Rossum于1989年创建的一种高级编程语言。它以简洁、易读的语法而闻名，被广泛应用于：</p>
                             <ul>
-                                <li>Python简介与安装</li>
-                                <li>第一个Python程序</li>
-                                <li>基本数据类型</li>
-                                <li>变量与赋值</li>
+                                <li>Web开发（Django、Flask）</li>
+                                <li>数据科学与人工智能（NumPy、Pandas、TensorFlow）</li>
+                                <li>自动化脚本</li>
+                                <li>游戏开发</li>
+                                <li>网络爬虫</li>
+                                <li>数据分析</li>
                             </ul>
+                            
+                            <h5>1.2 Python的安装与配置</h5>
+                            <p>步骤1：访问Python官方网站（https://www.python.org/）</p>
+                            <p>步骤2：下载适合你操作系统的Python版本（推荐Python 3.9+）</p>
+                            <p>步骤3：运行安装程序，确保勾选"Add Python to PATH"选项</p>
+                            <p>步骤4：验证安装成功，打开命令提示符（Windows）或终端（Mac/Linux），输入以下命令：</p>
+                            <pre><code>python --version</code></pre>
+                            <p>如果显示Python版本号，则安装成功。</p>
+                            
+                            <h5>1.3 开发环境选择</h5>
+                            <p><strong>PyCharm</strong>：功能强大的Python IDE，适合专业开发，有社区版（免费）和专业版</p>
+                            <p><strong>VS Code</strong>：轻量级编辑器，通过安装Python扩展支持Python开发，完全免费</p>
+                            <p><strong>IDLE</strong>：Python自带的简单编辑器，适合初学者</p>
+                            
+                            <h5>1.4 第一个Python程序：Hello World</h5>
+                            <p>打开你的编辑器，创建一个新文件，命名为<code>hello.py</code>，输入以下代码：</p>
+                            <pre><code>print("Hello, World!")</code></pre>
+                            <p>保存文件后，在命令提示符或终端中运行：</p>
+                            <pre><code>python hello.py</code></pre>
+                            <p>你应该会看到输出：<code>Hello, World!</code></p>
+                            
+                            <h5>1.5 Python的基本数据类型</h5>
+                            <ul>
+                                <li><strong>整数（int）</strong>：如 1, 2, 3, -4</li>
+                                <li><strong>浮点数（float）</strong>：如 1.5, 2.0, -3.14</li>
+                                <li><strong>字符串（str）</strong>：如 "Hello", 'Python'</li>
+                                <li><strong>布尔值（bool）</strong>：True, False</li>
+                            </ul>
+                            <p>示例：</p>
+                            <pre><code># 整数
+age = 18
+
+# 浮点数
+height = 1.75
+
+# 字符串
+name = "Alice"
+
+# 布尔值
+is_student = True</code></pre>
+                            
+                            <h5>1.6 变量与赋值操作</h5>
+                            <p>变量是用来存储数据的容器，使用赋值运算符<code>=</code>来赋值：</p>
+                            <pre><code># 变量赋值
+x = 10
+y = 20
+
+# 变量计算
+z = x + y
+print(z)  # 输出 30
+
+# 重新赋值
+x = 5
+print(x)  # 输出 5</code></pre>
+                            
+                            <h5>1.7 基本运算符与表达式</h5>
+                            <ul>
+                                <li><strong>算术运算符</strong>：+, -, *, /, // (整除), % (取模), ** (幂)</li>
+                                <li><strong>比较运算符</strong>：==, !=, >, <, >=, <=</li>
+                                <li><strong>逻辑运算符</strong>：and, or, not</li>
+                            </ul>
+                            <p>示例：</p>
+                            <pre><code># 算术运算
+print(10 + 5)   # 15
+print(10 - 5)   # 5
+print(10 * 5)   # 50
+print(10 / 5)   # 2.0
+print(10 // 3)  # 3
+print(10 % 3)   # 1
+print(2 ** 3)   # 8
+
+# 比较运算
+print(10 == 5)  # False
+print(10 > 5)   # True
+
+# 逻辑运算
+print(True and False)  # False
+print(True or False)   # True
+print(not True)       # False</code></pre>
+                            
+                            <h5>1.8 练习</h5>
+                            <ol>
+                                <li>安装Python并验证安装成功</li>
+                                <li>编写一个Python程序，输出你的姓名和年龄</li>
+                                <li>计算并输出100以内所有偶数的和</li>
+                                <li>创建变量存储你的身高和体重，计算并输出BMI指数</li>
+                            </ol>
                         </div>
                     </div>
                     <div class="module">
                         <div class="module-header">
-                            <h4>第2周：控制流</h4>
+                            <h4>第2周：控制流与循环结构</h4>
                             <span class="module-duration">2.5小时</span>
                         </div>
                         <div class="module-content">
                             <ul>
-                                <li>条件语句（if-elif-else）</li>
-                                <li>循环语句（for和while）</li>
-                                <li> break和continue语句</li>
-                                <li>综合练习</li>
+                                <li>条件语句：if-elif-else</li>
+                                <li>逻辑运算符（and、or、not）</li>
+                                <li>for循环与range()函数</li>
+                                <li>while循环</li>
+                                <li>break和continue语句</li>
+                                <li>循环嵌套</li>
+                                <li>综合练习：猜数字游戏</li>
                             </ul>
                         </div>
                     </div>
                     <div class="module">
                         <div class="module-header">
-                            <h4>第3周：数据结构</h4>
+                            <h4>第3周：数据结构基础</h4>
                             <span class="module-duration">3小时</span>
                         </div>
                         <div class="module-content">
                             <ul>
-                                <li>列表（List）</li>
-                                <li>元组（Tuple）</li>
-                                <li>字典（Dictionary）</li>
-                                <li>集合（Set）</li>
+                                <li>列表（List）的创建与操作</li>
+                                <li>列表的方法（append、insert、remove、sort等）</li>
+                                <li>元组（Tuple）的特性与使用</li>
+                                <li>字典（Dictionary）的创建与操作</li>
+                                <li>字典的方法（keys、values、items等）</li>
+                                <li>集合（Set）的特性与操作</li>
+                                <li>综合练习：学生信息管理</li>
                             </ul>
                         </div>
                     </div>
                     <div class="module">
                         <div class="module-header">
-                            <h4>第4周：函数</h4>
+                            <h4>第4周：函数与模块</h4>
                             <span class="module-duration">2.5小时</span>
                         </div>
                         <div class="module-content">
                             <ul>
-                                <li>函数定义与调用</li>
-                                <li>参数传递</li>
-                                <li>返回值</li>
+                                <li>函数的定义与调用</li>
+                                <li>参数传递（位置参数、默认参数、关键字参数）</li>
+                                <li>返回值与多返回值</li>
+                                <li>局部变量与全局变量</li>
                                 <li>递归函数</li>
+                                <li>lambda函数</li>
+                                <li>综合练习：计算器函数</li>
                             </ul>
                         </div>
                     </div>
                     <div class="module">
                         <div class="module-header">
-                            <h4>第5周：文件操作</h4>
+                            <h4>第5周：文件操作与异常处理</h4>
                             <span class="module-duration">2小时</span>
                         </div>
                         <div class="module-content">
                             <ul>
-                                <li>文件读写操作</li>
+                                <li>文件的打开与关闭</li>
+                                <li>文件读写操作（read、write、readline等）</li>
                                 <li>上下文管理器（with语句）</li>
-                                <li>文件路径处理</li>
-                                <li>异常处理</li>
+                                <li>文件路径处理（os模块）</li>
+                                <li>异常处理（try-except-finally）</li>
+                                <li>常见异常类型</li>
+                                <li>综合练习：文件读写与数据处理</li>
                             </ul>
                         </div>
                     </div>
                     <div class="module">
                         <div class="module-header">
-                            <h4>第6周：模块与包</h4>
+                            <h4>第6周：模块与包管理</h4>
                             <span class="module-duration">2.5小时</span>
                         </div>
                         <div class="module-content">
                             <ul>
-                                <li>标准库介绍</li>
-                                <li>模块导入</li>
-                                <li>第三方库安装与使用</li>
-                                <li>包的结构</li>
+                                <li>Python标准库介绍</li>
+                                <li>模块的导入与使用</li>
+                                <li>第三方库的安装（pip）</li>
+                                <li>常用第三方库介绍（numpy、pandas等）</li>
+                                <li>包的结构与创建</li>
+                                <li>__init__.py文件的作用</li>
+                                <li>综合练习：使用第三方库进行数据分析</li>
                             </ul>
                         </div>
                     </div>
                     <div class="module">
                         <div class="module-header">
-                            <h4>第7周：面向对象编程</h4>
+                            <h4>第7周：面向对象编程基础</h4>
                             <span class="module-duration">3小时</span>
                         </div>
                         <div class="module-content">
                             <ul>
-                                <li>类与对象</li>
+                                <li>类与对象的概念</li>
+                                <li>类的定义与实例化</li>
+                                <li>构造函数（__init__）</li>
+                                <li>实例方法与类方法</li>
                                 <li>继承与多态</li>
-                                <li>封装与抽象</li>
-                                <li>特殊方法</li>
+                                <li>封装与访问控制</li>
+                                <li>特殊方法（__str__、__repr__等）</li>
+                                <li>综合练习：创建一个简单的类</li>
                             </ul>
                         </div>
                     </div>
                     <div class="module">
                         <div class="module-header">
-                            <h4>第8周：项目实战</h4>
+                            <h4>第8周：项目实战与综合应用</h4>
                             <span class="module-duration">3.5小时</span>
                         </div>
                         <div class="module-content">
                             <ul>
+                                <li>项目规划与需求分析</li>
                                 <li>综合项目：学生管理系统</li>
-                                <li>代码优化与调试</li>
-                                <li>项目部署</li>
-                                <li>课程总结</li>
+                                <li>系统功能设计与实现</li>
+                                <li>代码优化与调试技巧</li>
+                                <li>项目测试与部署</li>
+                                <li>版本控制基础（Git）</li>
+                                <li>课程总结与学习路径规划</li>
                             </ul>
                         </div>
                     </div>
@@ -166,57 +377,98 @@
         </div>
     </section>
 
-    <!-- 注册区域 -->
-    <section class="signup">
+    <!-- 关于课程 -->
+    <section id="about" class="about">
         <div class="container">
-            <div class="signup-content">
-                <h2>准备好开始你的Python学习之旅了吗？</h2>
-                <p>注册即可获得7天免费试用，解锁所有课程内容</p>
-                <div class="signup-form">
-                    <input type="email" placeholder="输入你的邮箱">
-                    <button class="btn btn-primary">立即注册</button>
+            <h2 class="section-title">关于课程</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>课程目标</h3>
+                    <p>本课程旨在帮助初学者从零开始学习Python编程语言，掌握编程基础概念和实战技能。通过8周的学习，学生将能够独立编写Python程序，解决实际问题。</p>
+                    <p>课程内容涵盖Python基础语法、控制流、数据结构、函数、文件操作、模块与包、面向对象编程和项目实战等核心内容，为后续的进阶学习打下坚实的基础。</p>
+                </div>
+                <div class="about-info">
+                    <h3>课程特色</h3>
+                    <ul>
+                        <li><strong>循序渐进：</strong>从基础到进阶，适合零基础学习者</li>
+                        <li><strong>实战导向：</strong>每个知识点都有相应的实战练习</li>
+                        <li><strong>详细讲解：</strong>每个概念都有详细的讲解和示例</li>
+                        <li><strong>项目实战：</strong>最后一周通过综合项目巩固所学知识</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer class="footer">
+    <!-- 学习资源 -->
+    <section id="resources" class="resources">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>Python学习中心</h3>
-                    <p>专注于Python编程语言的教学，帮助学习者掌握编程基础和实战技能。</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-weixin"></i></a>
-                        <a href="#"><i class="fab fa-weibo"></i></a>
-                        <a href="#"><i class="fab fa-qq"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+            <h2 class="section-title">学习资源</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
                     </div>
+                    <h3>教材推荐</h3>
+                    <p>《Python编程：从入门到实践》</p>
+                    <p>《Python基础教程》</p>
+                    <p>《流畅的Python》</p>
                 </div>
-                <div class="footer-column">
-                    <h4>课程导航</h4>
-                    <ul>
-                        <li><a href="python-course.html">首页</a></li>
-                        <li><a href="#outline">课程大纲</a></li>
-                    </ul>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>在线资源</h3>
+                    <p>Python官方文档</p>
+                    <p>GitHub代码仓库</p>
+                    <p>Stack Overflow</p>
                 </div>
-                <div class="footer-column">
-                    <h4>联系我们</h4>
-                    <ul>
-                        <li><a href="#">关于我们</a></li>
-                        <li><a href="#">联系方式</a></li>
-                        <li><a href="#">隐私政策</a></li>
-                        <li><a href="#">用户协议</a></li>
-                        <li><a href="#">帮助中心</a></li>
-                    </ul>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>开发工具</h3>
+                    <p>PyCharm</p>
+                    <p>VS Code</p>
+                    <p>Jupyter Notebook</p>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Python学习中心. 保留所有权利。</p>
             </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- 代码运行器 -->
+    <div class="code-runner" id="codeRunner">
+        <div class="code-runner-header" onclick="toggleCodeRunner()">
+            <div class="code-runner-title">Python代码运行器</div>
+            <div class="code-runner-actions">
+                <button onclick="toggleFloating()" title="切换悬浮模式">
+                    <i class="fas fa-window-maximize"></i>
+                </button>
+                <button onclick="toggleCodeRunner()" title="折叠/展开">
+                    <i class="fas fa-chevron-down" id="collapseIcon"></i>
+                </button>
+            </div>
+        </div>
+        <div class="code-runner-content">
+            <div class="code-editor">
+                <textarea id="codeEditor"># 在这里输入Python代码
+print("Hello, World!")
+
+# 尝试一些基本操作
+name = "Python"
+age = 33
+print(f"{name} is {age} years old")
+
+# 计算1+1
+print(1 + 1)</textarea>
+            </div>
+            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <button class="run-button" onclick="runCode()">运行代码</button>
+                <button class="run-button" style="background-color: #ff99b4;" onclick="resetCode()">重置代码</button>
+            </div>
+            <div class="output" id="output"></div>
+        </div>
+    </div>
 
     <script>
         // 移动端菜单切换
@@ -246,6 +498,92 @@
                 this.classList.toggle('active');
             });
         });
+
+        // 代码运行器功能
+        let pyodide;
+        let codeMirror;
+
+        // 初始化Pyodide
+        async function initPyodide() {
+            pyodide = await loadPyodide({
+                indexURL: "https://cdn.jsdelivr.net/pyodide/v0.24.1/full/"
+            });
+            console.log("Pyodide 初始化完成");
+        }
+
+        // 初始化CodeMirror
+        function initCodeMirror() {
+            codeMirror = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+                mode: 'python',
+                theme: 'monokai',
+                lineNumbers: true,
+                indentUnit: 4,
+                indentWithTabs: false,
+                autofocus: false
+            });
+        }
+
+        // 运行代码
+        async function runCode() {
+            const code = codeMirror.getValue();
+            const outputElement = document.getElementById('output');
+            
+            try {
+                outputElement.textContent = "运行中...";
+                // 重定向标准输出
+                pyodide.globals.set("console", {
+                    log: function(...args) {
+                        outputElement.textContent += args.join(" ") + "\n";
+                    }
+                });
+                
+                // 运行代码
+                await pyodide.runPythonAsync(code);
+            } catch (error) {
+                outputElement.textContent = "错误: " + error.message;
+            }
+        }
+
+        // 切换代码运行器折叠状态
+        function toggleCodeRunner() {
+            const codeRunner = document.getElementById('codeRunner');
+            const collapseIcon = document.getElementById('collapseIcon');
+            codeRunner.classList.toggle('collapsed');
+            
+            if (codeRunner.classList.contains('collapsed')) {
+                collapseIcon.className = 'fas fa-chevron-right';
+            } else {
+                collapseIcon.className = 'fas fa-chevron-down';
+            }
+        }
+
+        // 切换悬浮模式
+        function toggleFloating() {
+            const codeRunner = document.getElementById('codeRunner');
+            codeRunner.classList.toggle('floating');
+        }
+
+        // 重置代码到默认示例
+        function resetCode() {
+            const defaultCode = `# 在这里输入Python代码
+print("Hello, World!")
+
+# 尝试一些基本操作
+name = "Python"
+age = 33
+print(f"{name} is {age} years old")
+
+# 计算1+1
+print(1 + 1)`;
+            codeMirror.setValue(defaultCode);
+            document.getElementById('output').textContent = '';
+        }
+
+        // 页面加载完成后初始化
+        window.onload = function() {
+            initPyodide();
+            initCodeMirror();
+        };
     </script>
 </body>
 </html>
